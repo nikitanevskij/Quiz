@@ -1,10 +1,14 @@
 import React from "react";
 import s from "./AnswerItem.module.css";
 
-const AnswerItem = ({ onAnswerClick, answerId, answer }) => {
+const AnswerItem = ({ onAnswerClick, answerId, answer, state }) => {
+  const cls = [s.answersitem];
+  if (state) {
+    cls.push(s[state]);
+  }
   return (
     <li
-      className={s.answersitem}
+      className={cls.join(" ")}
       onClick={() => {
         onAnswerClick(answerId);
       }}
