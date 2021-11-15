@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import s from "./FinishedQuiz.module.css";
 
@@ -37,7 +38,9 @@ function FinishedQuiz({ quizes, quizesResults, onRepeat }) {
         <Button onClick={onRepeat} type="primary">
           Повторить
         </Button>
-        <Button type="success">Перейти в писок тестов</Button>
+        <Link to="/">
+          <Button type="success">Перейти в писок тестов</Button>
+        </Link>
       </div>
     </div>
   );
